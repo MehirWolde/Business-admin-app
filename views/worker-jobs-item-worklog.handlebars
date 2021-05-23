@@ -1,0 +1,30 @@
+<!-- handlebarsfil för workerview versonen av jobs-->
+<link rel="stylesheet" type="text/css" href="/css/worker-jobs.css" >
+ <div class="background">
+    <div class="itemWrapper">
+        <div class="topPanel" id="item">
+            <div id= "name">
+            <h2>Work report log</h2>
+            </div>
+        </div>
+
+        <div   class="content" id="backButton"><a href="/worker/jobs-item?id={{idNumber}}">
+        <p>Back</p></a></div>
+          
+        <div id= "jobList">
+            {{#each saveResult}}
+            <div id= "jobList">
+
+            <div class = "content">
+                <a href="/worker/jobs-item/single-log?id={{this.id}}">
+                <p class = "jobName"> Date: {{this.date}} </p> 
+                <p class = "jobID"> Hours: {{this.hours}}</p>
+                <p class = "jobDescription"> Notes: {{this.notes}}</p></a>
+            </div> 
+            {{/each}}
+        </div>
+       
+
+    </div>
+</div>
+</div>

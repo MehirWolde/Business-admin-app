@@ -1,0 +1,36 @@
+<!-- the handlebars file for the page to display all fuel information -->
+<link rel="stylesheet" type="text/css" href="/css/admin-jobs.css" >
+     
+    <div id= "jobsMain">
+        <p id="pageTitle">Fuel Log</p>
+        <div id="topPanel">
+                <div id="searchBarGrid">
+                    <form action="/admin/fuel/search">
+                        <input class="searchBar" id="searchBarGrid" type="text" placeholder="Search" name="searchParam" onchange="">
+                        <input class="inputField" type="date" name="dateFrom" id="dateFrom" placeholder="  Date..."  value= {{dateFrom}}>
+                        <br>
+                        <input class="inputField" type="date" name="dateTo" id="dateTo" placeholder="  Date..."  value= {{dateTo}}>
+                    </form>
+                    <a href="/admin/statistics/" target="content2"class="button" id ="addButton">
+                        <p>Stats</p>
+                    </a>
+                </div>
+
+        </div>
+          <div class = "statsText">
+              <br>
+                    <iframe class = "statsText" src="/admin/statistics/total?option=0&dateFrom=&dateTo=7&fuelTanker=&worker=&equipment=" title="Totals" width="100%" height="20em" frameborder="0"></iframe>
+                    <iframe class = "statsText" src="/admin/statistics/total?option=0&dateFrom=30&dateTo=30&fuelTanker=&worker=&equipment=" title="Totals" width="100%" height="20em" frameborder="0"></iframe>
+                </div>
+
+        {{#each saveResult}}
+            <div id= "jobList">
+            <div class = "jobItem">
+                <a href="/admin/fuel-event?id={{this.idNumber}}" target="content2">
+                <p class = "jobName"> {{this.vehicle}} </p> 
+                <p class = "jobID">{{this.liter}}</p>
+                <p class = "jobDescription">{{this.fuelTanker}}</p></a>
+            </div>
+        </div>
+        {{/each}}
+</div>

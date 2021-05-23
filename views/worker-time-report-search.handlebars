@@ -1,0 +1,27 @@
+<link rel="stylesheet" type="text/css" href="/css/worker-jobs.css" >
+ <div class="background">
+ <div class="wrapwrap">
+      <div id= "jobsMain">
+        <div id="t1"><p>Event reports</p></div>
+
+        </div>
+
+        <div id="backButton" class="content">
+            <a href="."><p>Back</p></a> 
+        </div>
+          
+        <div id= "jobList">
+            {{#each saveResult}}
+            <div id= "jobList">
+            <div class = "content">
+                <a href="/worker/jobs-item/single-log?id={{this.idNumber}}"> 
+                <p class = "jobName"> Job name: {{this.jobName}} </p> 
+                <p class = "jobID">{{this.date}}</p>
+                <p class = "jobDescription">{{this.notes}}</p></a>
+            </div>
+        </div>
+        {{/each}}
+
+    </div>
+</div>
+</div>

@@ -1,0 +1,58 @@
+<link rel="stylesheet" type="text/css" href="/css/worker-jobs.css" >
+
+<div class="background">
+
+       
+            <form action="/worker/fuel-report" method="POST">
+            <div class="wrapper">
+             <!--<div  class="itemWrapper" id="wrapperCompFuel">-->
+            <div class="topPanel" id="report"> 
+                <p><button class="button" type="submit">Submit</button></p>
+                <p><input type="button" class="button" id= "report" onclick="history.back();" value="Cancel" ></p>
+            </div>
+            
+            <input type="hidden"  name="name" value="{{name}}">
+
+            <div>
+                <input class="field" type="hidden" name="idNumber"  placeholder="ID Number..." value= {{idNumber}}>   
+            </div>
+
+            <div class="field" id="wrapperRow2">
+                <label class="infoText"> <p>* Required</p> <br> </label>
+                <label class= "title" for="type"> <p>* Type:</p> </label>
+                <input class="inputField" type="text" name="type"  placeholder="Type of fuel..." value= {{type}}> 
+            </div> 
+            
+            
+            <div class = "field" id="wrapperRow3">
+            <label class= "title" for="liter"> <p>* Litres:</p> </label>
+            <input class="inputField" type="text" name="liter"  placeholder="Number of litres..." value= {{liter}}>
+            </div>
+
+            <div class = "field" id="wrapperRow4">
+            <label class= "title" for="fuelTanker"> <p>* Tanker:</p> </label>
+                <select id="fuelTankers"  class="droppyBoi" list="fuelTankers" name="fuelTanker">
+                    {{#each tankers}}
+                    <option value="{{this.name}}">{{this.name}}</option>
+                    {{/each}}
+                </select>
+            </div>
+            
+            
+            <div class = "field" id="wrapperRow5">
+            <label class= "title" for="vehicle:"> <p>* Vehicle:</p> </label>
+                <select id="vehicles" class="droppyBoi" list="vehicles" name="vehicle">
+                    {{#each equipmentResults}}
+                    <option value="{{this.name}}">{{this.name}}</option>
+                    {{/each}}
+                </select>
+            </div>
+
+            <div class = "field" id="wrapperRow6">
+            <label for="notes"> <p>Notes:</p> </label>
+            <textarea class="textArea" id="NOTES" name="notes" placeholder="Notes: AddBlue etc..." rows=4 cols=30 value= {{notes}}></textarea>
+            </div>
+</div>
+            </form>
+        
+</div>

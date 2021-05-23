@@ -1,0 +1,176 @@
+*{
+    padding:0; 
+    margin:0;
+    font-family: 'Montserrat';
+}
+
+  /* latin-ext */
+  @font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/montserrat/v15/JTUSjIg1_i6t8kCHKm459Wdhyzbi.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/montserrat/v15/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+.wrapper{
+    display: grid;
+    grid-template-columns: 15fr 85fr;
+    grid-template-rows: 1fr;
+    height: 100vh;
+    width: 100vw;
+
+    background-image: url("../assets/images/homepage-bg.JPG");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+#navbar{
+    grid-column: 1/2;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+
+    margin: 1em;
+    row-gap: 1em;
+    font-size: 1.2em;
+    
+}
+#rightBox{
+    grid-column: 2/3;
+    
+
+    display: grid;
+    grid-template-rows: 1.1fr 7fr;
+
+}
+#blankBox{
+    grid-row: 2/3;
+
+}
+#topBox{
+    padding: 2em;
+    padding-top: 3em;
+    grid-row: 1/2;
+}
+
+#buttonJobs{
+    
+    grid-row: 1/2;
+}
+
+#buttonStaff {
+    
+    grid-row: 2/3;
+}
+
+#buttonTimeReport {
+    
+    grid-row: 3/4
+}
+
+#buttonClients {
+    
+    grid-row: 4/5;
+}
+
+#buttonCompletedJobs {
+    
+    grid-row: 5/6;
+}
+
+#buttonVehicles {
+    
+    grid-row: 6/7;
+}
+
+#buttonFuelLog {
+    
+    grid-row: 7/8;
+}
+
+#buttonLogOut {
+    grid-row: 8/9;
+}
+.button{
+    text-align: center;
+
+    background-color:#a3c899 ;
+    border-radius: 100px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    font-size:1.5em;/*rgb(43, 71, 41);#2b4f20  #a3c899*/
+    place-items: center;
+    color: rgb(237, 245, 238); 
+}
+
+.button:hover {
+    background-color: rgb(75, 109, 65);
+    color: #a3c899;
+}
+
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: rgb(75, 109, 65);
+}
+#leftWindow{
+    height: 100%;
+    width: 100%;
+    border-radius: 2.5em;
+}
+#rightWindow{
+    height: 100%;
+    width: 100%;
+    border-radius: 2.5em;
+}
+
+#dynamicBox{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1em;
+    margin: 1em;
+    margin-top: 0em;
+
+    
+}
+
+@media only screen and (max-height: 760px) {
+    .button{
+        height: 11vh;
+
+        padding-left: 1em;
+    }
+    #navbar{
+        font-size: 2.4vh;
+        row-gap: 0.1em;
+        margin: 0.1em;
+        height: 100vh;
+        padding-top: 0.3em;
+        
+    }
+    *{
+        overflow: hidden
+    }
+}
+
+.blinking{
+    animation:blinkingText 1.2s infinite;
+}
+@keyframes blinkingText{
+    0%{     color: red;    }
+    49%{    color: orange; }
+    60%{    color: yellow; }
+    99%{    color: green;  }
+    100%{   color: blue;   }
+}

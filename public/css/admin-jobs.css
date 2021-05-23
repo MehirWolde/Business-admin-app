@@ -1,0 +1,379 @@
+ *{
+    padding:0; 
+    margin:0;
+    font-family: 'Montserrat'; /* måste ändras till monsterrat */
+}
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/montserrat/v15/JTUSjIg1_i6t8kCHKm459Wdhyzbi.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/montserrat/v15/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+
+.grid-main{
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-rows: 12em 1fr 5em;
+    background-image: url("../assets/images/homepage-bg.JPG");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    width: 100vw;
+}
+.grid-main-body{
+    margin-top: 3em;
+    display: grid;
+    grid-row: 2;                /*do not touch, grid-row = it's the cell itself. grid-template-column is the "children" of the cell*/
+    grid-column: 2;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.grid-main-body > form {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-left: 5em;
+    margin-right: 5em;
+
+}
+
+:root{
+    font-size: 1em;
+}
+
+.wrapper{
+    display: grid;
+    grid-template-columns: 50fr 50fr;
+    grid-template-rows: 100fr;
+    height: 100vh;
+    width: 100vw;
+    opacity: 85%;
+    column-gap: 1em;
+}
+
+
+
+html {
+    overflow-y: overlay;
+}
+#jobsMain{
+    background-color: #a3c899;
+    opacity: 80%;
+    padding: 1em;
+    height: auto;
+    border-bottom-left-radius: 2.5em;
+    border-bottom-right-radius: 2.5em;
+}
+ 
+#pageTitle{
+    font-weight: bolder;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+#jobsAdd{
+    background-color: #a3c899;
+    opacity: 80%;
+    padding: 1em;
+    min-height: 100vh;
+    height: auto;
+}
+
+#topPanel{
+    display: grid;
+    grid-template-columns:70fr 30fr;
+}
+
+#bottomPanel{
+    display: grid;
+    grid-template-columns:50fr 50fr;
+}
+
+.searchBar{
+    background-color: white;
+    opacity: 70%;
+    border-radius: 5em;
+    padding: 1.5em;
+    margin: 1em;
+    margin-left: 0.5;
+    margin-bottom: 0em;
+    padding-left: 2em;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-right: 1em;
+    border-style: solid ;
+    border-width: 0.125em;
+    border-color: #0c1311;
+    height: 1.4em;
+
+    display: inline-block;
+    width: 70%;
+
+}
+#searchBarGrid{
+    display: grid;
+    grid-template-columns: 9fr 1fr;
+    
+
+}
+
+.button{
+    border-radius: 5em;
+    border-style: none ;
+    border-width: 0.125em;
+    border-color: none; 
+    padding: 1.5em;
+    background-color:  rgb(110, 136, 103); /* #B1B5AC*/
+    margin: 1em;
+    margin-bottom: 0em;
+    margin-right: 0.5;
+    padding-left: 2em;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: bold;
+    height: 1.4em; 
+
+}
+
+.button:hover {
+    background-color: rgb(69, 155, 45);
+}
+
+.deleteButton{
+    border-radius: 5em;
+    border-style: none ;
+    border-width: 0.125em;
+    border-color: none; 
+    padding: 1.5em;
+    background-color: #bd6161;
+    margin: 1em;
+    margin-bottom: 0em;
+    margin-right: 0.5;
+    padding-left: 2em;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: bold;
+    height: 1.4em;
+    text-align: center;
+}
+.deleteButton:hover {
+    background-color:  #c70000 ;
+}
+
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+#addButton{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.jobItem{
+    background-color: #e1ecde;
+    margin: 1em;
+    border-radius: 5em;
+    cursor: pointer;
+    height: 4em;
+    padding-top: 0.5em;
+    padding-left: 2em;
+}
+.jobItem:hover{
+    background-color: rgb(192, 192, 192);
+}
+
+.jobName{
+    font-weight: bold;
+}
+.onlyOne { 
+    font-size: medium;
+    font-weight: lighter;
+    padding-top: 1.5em;
+}
+.listItem{
+    background-color: #78996e;
+    margin: 1em;
+    border-radius: 5em;
+    height: 4em;
+    padding-top: 0.5em;
+    padding-left: 2em;
+}
+
+.inputField{
+    background-color: white;
+    border-radius: 5em;
+    padding: 0.5em;
+    margin: 1em;
+    margin-left: 0.5;
+    margin-bottom: 0em;
+    padding-left: 2em;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-right: 1em;
+    border-style: none ;
+    border-width: 0.125em;
+    border-color: #0c1311;
+    height: 1.4em;
+}
+
+.hiddenInputField{
+    display: none;
+    visibility: hidden;
+}
+
+#backButton{
+    display: grid;
+    grid-template-columns: 7fr 1fr;
+    padding-top: 1em;
+}
+.editForm{
+    background-color: #a3c899;
+    opacity:80%;
+    padding: 2em;
+    border-bottom-left-radius: 2.5em;
+    border-bottom-right-radius: 2.5em;
+}
+
+.editTitle{
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+#submitButton{
+    padding-bottom: 2.9em;
+}
+
+.textarea{                            
+    background-color: white;
+    
+    border-radius: 2em;
+
+    font-size: medium;
+    font-weight: lighter;
+    border-style: inset;
+    border-width: 0.125em;
+    border-color: #0c1311;
+    height: 1.4em;
+    padding: 1em;
+    
+}
+.jobDescription{
+    height:1.3em;
+    overflow:hidden;
+}
+
+#banner {
+    margin-top: 1.5em;
+    text-align: center;
+    font-weight: bold;
+}
+.dateSearch{
+    display: grid;
+    grid-template-columns: 20fr 80fr;
+}
+.datesearch > label {
+    display: inline-block
+}
+
+#resultWindow{
+    width: 100%;
+    height: 100%;
+}
+#timeForm{
+    
+}
+#fuelForm{
+    
+}
+.droppyBoi{
+    background-color: white;
+    opacity: 70%;
+    border-radius: 5em;
+    margin: 1em;
+    margin-left: 0.5;
+    margin-bottom: 0em;
+    margin-right: 1em;
+    padding-left: 0.5em;
+    border-style: none ;
+    border-width: 0.125em;
+    border-color: #0c1311;
+    height: 1.4em;
+    width: 15em;
+}
+
+#clients{
+   width: 32em;
+   height: 5em;
+   border-radius: 2em;
+   font-size: medium;
+   font-weight: lighter;
+   border-style: inset;
+   text-align: left;
+   margin:0em;
+}
+
+#clientsadd{
+    width:19em;
+    height: 3.5em;
+    margin: 2em;
+}
+
+.labelGrid{
+    display: grid;
+    grid-template-columns: 13em 15em;
+    
+}
+
+.labelLong{
+    margin-top: 0.8em;
+}
+
+.statButton{
+    border-radius: 5em;
+    border-style: none ;
+    border-width: 0.125em;
+    border-color: none; 
+    background-color:  rgb(110, 136, 103); /* #B1B5AC*/
+    margin: 1em;
+    padding: 1em;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    
+}
+
+.statButton:hover {
+    background-color: rgb(69, 155, 45);
+}
+.centeredDiv{
+    display: flex;
+    justify-content: center;
+}
+
+.pageStats{
+    background-color: #e1ecde;
+    opacity:50%;
+    line-height:2;
+    margin: 1em;
+    border-radius: 5em;
+    cursor: pointer;
+    height: 3em;
+    padding-top: 0.5em;
+    padding-left: 2em;
+}
+.statsText{
+text-align: left;
+grid-row:0;
+}

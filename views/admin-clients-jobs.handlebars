@@ -1,0 +1,15 @@
+<!-- the handlebars file for the page to display all jobs' information -->
+<link rel="stylesheet" type="text/css" href="/css/admin-jobs.css" >
+     
+    <div id= "jobsMain" > 
+        {{#each saveResult}}
+            <div id= "jobList">
+            <div class = "jobItem">
+                <a href="/admin/single-job?id={{this.id}}" target="content2">  
+                <p class = "jobName"> {{this.job}} </p> 
+                <p class = "jobID">{{this.date}}</p>
+                <p class = "jobDescription">{{this.notes}}</p></a>
+            </div>
+        </div>
+        {{/each}}
+</div>

@@ -1,0 +1,43 @@
+<link rel="stylesheet" type="text/css" href="/css/registration.css">
+<div class='grid-main'>
+        <p id="subtitle"> Create Account </p>
+
+        <div class="grid-main-body">
+                
+                <form id='registrationForm' action="/registration" method="POST">
+                        <p><input class='text-fields' id="idNumber" placeholder="idNumber" name="idNumber"
+                                        value="{{idNumber}}" type="hidden">
+                        </p>
+                        
+                        <p><input class='text-fields' type="text" id="name" placeholder="Name" name="name"
+                                        value={{name}}>
+                        </p>
+                        
+                        <p><input class='text-fields' type="text" id="email" placeholder="Email Address" name="email"
+                                        value={{email}}>
+                        </p>
+                        <p><input class='text-fields' type="text" id="phoneNumber" placeholder="Phone Number"
+                                        name="phoneNumber" value={{phoneNumber}}>
+                        </p>
+                        <p><input class='text-fields' type="text" id="username" placeholder="User name" name="username"
+                                        value={{username}}>
+                        </p>
+                        <p><input class='text-fields' type="password" id="password" placeholder="Password"
+                                        name="password" value={{password}}>
+                        </p>
+                        <p><input class='text-fields' type="password" id="repeatPassword" placeholder="Repeat Password"
+                                        name="repeatePassword" value={{repeatepassword}}>
+                        </p>
+
+                        <div class="radiobuttons">
+                                <input type="radio" name="account" id="admin" value="admin">
+                                <label for="admin">Admin</label><br>
+                                <input type="radio" name="account" id="worker" value="worker" checked>
+                                <label for="worker">Worker</label>
+                        </div>
+
+                        <p><button class='button' type="Submit">Create Account</button></p>
+
+                </form>
+        </div>
+        </div>

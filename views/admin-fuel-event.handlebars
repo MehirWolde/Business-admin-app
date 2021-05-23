@@ -1,0 +1,47 @@
+<!-- code copied from admin-jobs-add to use as a template and page positioning -->
+
+<!-- the handlebars file for the page to add a specific fuel event information -->
+<link rel="stylesheet" type="text/css" href="/css/admin-jobs.css" >
+<div class="editForm">
+    <form action="/admin/edit?cas=fuel" method="POST">
+
+            <label for="idNumber"><p class="editTitle">ID Number: {{saveResult.idNumber}}</p></label>
+
+
+            <input type="hidden" id="idNumber" name="idNumber" value="{{saveResult.idNumber}}">
+        <br><br>
+        
+        <p class="editTitle">Date: {{saveResult.createdAt}}</p>
+        <br><br>
+             <label for="type"><p class="editTitle">Type:</p></label>
+            <textarea class="textarea" id="type" name="type" rows="4" cols="50" >{{saveResult.type}}</textarea>
+        <br><br>
+
+         <label for="liter"><p class="editTitle">Liter: *</p></label>
+            <textarea class="textarea" id="liter" name="liter" rows="4" cols="50" required>{{saveResult.liter}}</textarea>
+        <br><br>
+
+
+         <label for="fuelTanker"><p class="editTitle">Fuel tanker: *</p></label>
+            <textarea class="textarea" id="fuelTanker" name="fuelTanker" rows="4" cols="50" required>{{saveResult.fuelTanker}}</textarea>
+        <br><br>
+
+         <label for="vechicle"><p class="editTitle">Vehicle: *</p></label>
+            <textarea class="textarea" id="vehicle" name="vehicle" rows="4" cols="50" required>{{saveResult.vehicle}}</textarea>
+        <br><br>
+
+        <label for="workers"><p class="editTitle">Workers: *</p></label>
+            <textarea class="textarea" id="workers" name="workers" rows="4" cols="50" required>{{saveResult.workers}}</textarea>
+        <br><br>
+
+        <label for="notes"><p class="editTitle">Notes:</p></label>
+            <textarea class="textarea" id="notes" name="notes" rows="4" cols="50" >{{saveResult.notes}}</textarea>
+        <br><br>
+        <p>* Required fields</p>
+           
+      <div id="bottomPanel">
+          <input type="submit" value="Submit Changes" class="button" id="submitButton"></input>
+            <a href="/admin/delete?cas=fuel&id={{saveResult.idNumber}}" target="content2" class="deleteButton">Delete Fuel</a>
+        </div>
+    </form>
+</div>

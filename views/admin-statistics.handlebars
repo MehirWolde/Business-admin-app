@@ -1,0 +1,89 @@
+<link rel="stylesheet" type="text/css" href="/css/admin-jobs.css" >
+<script>
+    function showFuel(){
+        document.getElementById('fuelForm').style.display = "block";
+        document.getElementById("timeForm").style.display = "none";
+    }
+    function showTime(){
+        document.getElementById('timeForm').style.display = "block";
+        document.getElementById("fuelForm").style.display = "none";
+    }
+     
+</script>
+<div id="jobsMain">
+    
+    <p id="pageTitle">Choose</p>
+    <div class="centeredDiv">
+        <input class ="statButton blinking" type="button" name="answer" value="Show fuel" onclick="showFuel()" />
+        <input class ="statButton blinking" type="button" name="answer" value="Show time" onclick="showTime()" />
+    </div>
+
+    <div id="fuelForm" style="display:none;">
+        <form action="/admin/statistics/total" target="resultWindow">
+            <input class="textarea" type="hidden" id="option" name="option" value="0">
+            <input class="inputField" type="date" name="dateFrom" id="dateFrom" placeholder="  Date..." requred value= {{dateFrom}}>
+            <input class="inputField" type="date" name="dateTo" id="dateTo" placeholder="  Date..." required value= {{dateTo}}>
+            <br>
+            <div class="labelGrid">
+                <label class="labelLong" for="fuelTanker">Choose a fuel tanker:</label>
+                <select class="droppyBoi" name="fuelTanker" id="fuelTanker">
+                    <option></option>
+                    {{#each fuelTankerResult}}
+                        <option value="{{this.name}}">{{this.name}}</option>
+                    {{/each}}
+                    </select>
+
+                <label class="labelLong" for="worker">Choose an employee:</label>
+                <select class="droppyBoi" name="worker" id="worker">
+                    <option></option>
+                    {{#each workerResult}}
+                        <option value="{{this.username}}">{{this.username}}</option>
+                    {{/each}}
+                </select>
+
+                <label class="labelLong" for="equipment">Choose a vehicle:</label>
+                <select class="droppyBoi" name="equipment" id="equipment">
+                    <option></option>
+                    {{#each equipmentResult}}
+                        <option value="{{this.name}}">{{this.name}}</option>
+                    {{/each}}
+                </select>
+            </div>
+
+
+            <input class="statButton" type="submit" value="Submit">
+        </form>
+    </div>
+
+    <div id="timeForm" style="display:none;">
+        <form action="/admin/statistics/total" target="resultWindow">
+            <input class="textarea" type="hidden" id="option" name="option" value="1">
+            <input class="inputField" type="date" name="dateFrom" id="dateFrom" placeholder="  Date..." requred value= {{dateFrom}}>
+            <input class="inputField" type="date" name="dateTo" id="dateTo" placeholder="  Date..." required value= {{dateTo}}>
+            <br>
+
+            <div class="labelGrid">
+
+                <label class="labelLong" for="worker">Choose an employee:</label>
+                <select class="droppyBoi" name="worker" id="worker">
+                    <option></option>
+                    {{#each workerResult}}
+                        <option value="{{this.username}}">{{this.username}}</option>
+                    {{/each}}
+                </select>
+
+                <label class="labelLong" for="job">Choose a job:</label>
+                <select class="droppyBoi" name="job" id="job">
+                    <option></option>
+                    {{#each jobsResult}}
+                        <option value="{{this.idNumber}}">{{this.name}}</option>
+                    {{/each}}
+                </select>
+
+            </div>
+
+            <input class="statButton" type="submit" value="Submit">
+        </form>
+    </div>
+    <iframe id="resultWindow" src=""  name="resultWindow" width="100vw"  frameborder="0"></iframe>
+</div>

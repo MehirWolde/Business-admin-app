@@ -1,0 +1,34 @@
+<!-- the handlebars file for the page to add a specific fuel event information -->
+<link rel="stylesheet" type="text/css" href="/css/admin-jobs.css" >
+<div class="editForm">
+    <form action="/admin/edit?cas=equipment" method="POST">
+       
+            <label for="ID"><p class="editTitle">ID Number: {{saveResult.idNumber}}</p></label>
+            <input class="textarea" type="hidden" id="idNumber" name="idNumber" value="{{saveResult.idNumber}}">
+        <br><br>
+     
+            <label for="NAME"><p class="editTitle">Name:</p></label>
+            <textarea class="textarea" id="name" name="name" rows="4" cols="50" required>{{saveResult.name}}</textarea>
+        <br><br>
+
+         <label for="serialNumber"><p class="editTitle">Serial/Reg. Number:</p></label>
+            <textarea class="textarea" id="serialNumber" name="serialNumber" rows="4" cols="50" required>{{saveResult.serialNumber}}</textarea>
+        <br><br>
+
+        <label> Tanker:
+            <input type="checkbox" id="status" name="status" value="true"
+        {{#if saveResult.status}}
+            checked="checked"
+        {{/if}}
+        >
+        <br><br>
+        <label for="notes"><p class="editTitle">Notes:</p></label>
+            <textarea class="textarea" id="notes" name="notes" rows="4" cols="50" >{{saveResult.notes}}</textarea>
+        <br><br>
+           
+      <div id="bottomPanel">
+          <input type="submit" value="Submit Changes" class="button" id="submitButton"></input>
+            <a href="/admin/delete?cas=equipment&id={{saveResult.idNumber}}" target="content2" class="deleteButton">Delete Equipment</a>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,30 @@
+<!-- the handlebars file for the page to add a specific new equipment information -->
+<link rel="stylesheet" type="text/css" href="/css/admin-jobs.css" >
+<body>
+<div id="jobsAdd">
+    <form action="/admin/equipment-add" method="POST">
+        <label for="ID">  </label>
+        <input class="hiddenInputField" type="text" name="idNumber" id="ID" placeholder="ID Number..." value= {{idNumber}} >
+
+        <label for="NAME"> <p>* Name:</p> </label>
+        <input class="inputField" type="text" name="name" id="NAME" placeholder="Name..." value= {{name}}>
+
+        <label for="SERIALNUMBER"> <p>* Serial/Reg. Number:</p> </label>
+        <input class="inputField" type="text" name="serialNumber" id="SERIALNUMBER" placeholder="Serial/Reg. Number..." value= {{serialNumber}}>
+        <br>
+        <br>
+        <label> Tanker:
+            <input type="checkbox" id="status" name="status" value="true"
+        {{#if status}}
+            checked="checked"
+        {{/if}}
+        >
+        <br>
+        <br>
+        <label for="NOTES"> <p>Notes:</p> </label>
+        <input class="inputField" type="text" name="notes" id="NOTES" placeholder="Notes..." value= {{notes}}>
+        <p><br>* Required</p>
+        <p><button class="button" type="submit">Submit</button></p>
+    </form>
+</div>
+</body>

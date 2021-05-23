@@ -1,0 +1,26 @@
+<!-- the handlebars file for the page to add a specific job's information -->
+<link rel="stylesheet" type="text/css" href="/css/admin-jobs.css" >
+<body>
+<div id="jobsAdd">
+    <form action="/admin/clients-add" method="POST">
+        <label for="ID" class= "hiddenInputField"> <p>ID Number:</p> </label>
+        <input class="hiddenInputField" type="text" name="idNumber" id="ID" placeholder="ID Number..." required value= {{idNumber}}>
+        
+        <label for="NAME"> <p>Name:</p> </label>
+        <input class="inputField" type="text" name="name" id="NAME" placeholder="Name..." required value= {{name}}>
+        <br><br>
+        <label for="PHONENUMBER"> <p>Phone Number:</p> </label>
+        <input class="inputField" type="text" name="phoneNumber" id="PHONENUMBER" placeholder="Phone Number..." required value= {{phoneNumber}}>
+        <br><br>
+        <label for="EMAIL"> <p>E-mail:</p> </label>
+        <input class="inputField" type="text" name="email" id="EMAIL" placeholder="E-mail adress..." value= {{email}}>
+        <br><br>
+        <label for="NOTES"> <p>Notes:</p> </label>
+        <input class="inputField" type="text" name="notes" id="NOTES" placeholder="Notes..." value= {{notes}}>
+        <br><br>
+        
+        <p><button class="button" type="submit">Submit</button></p>
+        
+    </form>
+</div>
+</body>

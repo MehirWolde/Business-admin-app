@@ -1,0 +1,42 @@
+<link rel="stylesheet" type="text/css" href="/css/worker-jobs.css" >
+<div class="background">
+
+<div class="topPanel" id="item">
+    <div id= "name">
+        <h2>EventID: {{saveResult.id}}</h2>
+    </div>
+</div>
+
+<div class="itemWrapper">
+    <div class="content" id="backButton" type="button" onclick="history.back()">Back</div>
+
+    <div id= "back" class="content">
+        <p>JobID: {{saveResult.job}}</p>
+    </div>
+
+    <div id= "description" class="content">
+        <p>Notes: {{saveResult.notes}}</p>
+    </div>
+
+    <div id= "address" class="content">
+        <p>Work time: {{saveResult.start}} - {{saveResult.end}}</p>
+    </div>
+    
+    <div id="location" class="content">
+        <p>Date: {{saveResult.date}} </p>
+    </div>
+    
+    <div id="reportWork" class="content">
+       <p>Equipment: {{saveResult.equipment}}</p>
+    </div>
+    
+    <div id="workLog" class="content">
+       <p>Hectares: {{saveResult.hectares}}</p>
+    </div>
+
+    <div id="reportHoldup" class="content">
+       <p>Items: {{saveResult.items}}</p>
+    </div>
+</div>
+
+</div>

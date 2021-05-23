@@ -1,0 +1,45 @@
+<!-- handlebarsfil för workerview versionen för att se info om ett spec job-->
+<link rel="stylesheet" type="text/css" href="/css/worker-jobs.css" >
+
+<div class= "background">
+<div class="topPanel" id="item">
+    <div id= "name">
+        <h2>{{saveResult.name}}</h2>
+    </div>
+</div>
+
+<div class="itemWrapper">
+
+    <a id="backButton" href="/worker/jobs" class="content">
+       <p>Back</p>
+    </a>
+    
+    <div id="description">
+        <p>Client: {{saveResult.client}}</p>
+    </div>
+
+    <div id= "description">
+        <p>Description: {{saveResult.description}}</p>
+    </div>
+
+    <div id= "address">
+        <p>Address: {{saveResult.address}}</p>
+    </div>
+    
+    <a href="{{saveResult.location}}" id="location" class="content" target="_blank">
+        <p>Location </p>
+    </a>
+    
+    
+    <a href="/worker/jobs-item-report?id={{saveResult.idNumber}}" id="reportWork" class="content">
+       <p>Report Work</p>
+    </a>
+    
+    
+    <a href="/worker/jobs-item-worklog?id={{saveResult.idNumber}}" id="workLog" class="content">
+       <p>Work Log</p>
+    </a>
+
+
+</div>
+</div>

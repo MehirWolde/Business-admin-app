@@ -1,0 +1,96 @@
+<!-- the handlebars file for the page to add a specific job's information -->
+<link rel="stylesheet" type="text/css" href="/css/admin-jobs.css" >
+<body>
+<div id="jobsAdd">
+    <form action="/admin/jobs-add" method="POST">
+        <label for="ID" class= "hiddenInputField"> <p>ID Number:</p> </label>
+        <input class="hiddenInputField" type="text" name="idNumber" id="ID" placeholder="ID Number..." required value= {{idNumber}}>
+
+        <label for="NAME"> <p>Name: *</p> </label>
+        <input class="inputField" type="text" name="name" id="NAME" placeholder="Name..." required value= {{name}}>
+        <br><br>
+        
+        <label for="DESCRIPTION"> <p>Description:</p> </label>
+        <input class="inputField" type="text" name="description" id="DESCRIPTION" placeholder="Description..." value= {{description}}>
+        <br><br>
+        <label for="LOCATION"> <p>Location: (Google maps link)</p> </label>
+        <input class="inputField" type="text" name="location" id="LOCATION" placeholder="Location..." value= {{location}}>
+        <br><br>
+        <label for="ADDRESS:"> <p>Address:</p> </label>
+        <input class="inputField" type="text" name="address" id="ADDRESS" placeholder="Address..." value= {{address}}>
+        <br><br>
+        <label for="WORKERS"> <p>Workers:</p> </label>
+        <input class="inputField" type="text" name="workers" id="WORKERS" placeholder="Workers..." value= {{workers}}>
+        
+        <br><br>
+        <label class="labelLong" for="clients">Client:</label><br>
+                <select class="droppyBoi" name="client" id="clientsadd">
+                    <option></option>
+                    {{#each clientsResult}}
+                        <option value="{{this.name}}">{{this.name}}</option>
+                    {{/each}}    
+                </select>
+        <br>
+        <div class = "field" id="mainField">
+            <label class="labelLong" for="equipment">Vehicle/Equipment:</label><br>
+                <select class="droppyBoi" name="equipment" id="clientsadd">
+                    <option></option>
+                    {{#each equipmentResult}}
+                        <option value="{{this.name}}">{{this.name}}</option>
+                    {{/each}}    
+                </select>
+            </div>
+            <div class = "field" id="mainField">
+            <label class="labelLong" for="equipment">Vehicle/Equipment:</label><br>
+                <select class="droppyBoi" name="equipment" id="clientsadd">
+                    <option></option>
+                    {{#each equipmentResult}}
+                        <option value="{{this.name}}">{{this.name}}</option>
+                    {{/each}}    
+                </select>
+            </div>
+            <div class = "field" id="mainField">
+            <label class="labelLong" for="equipment">Vehicle/Equipment:</label><br>
+                <select class="droppyBoi" name="equipment" id="clientsadd">
+                    <option></option>
+                    {{#each equipmentResult}}
+                        <option value="{{this.name}}">{{this.name}}</option>
+                    {{/each}}    
+                </select>
+            </div>
+        <div class = "field" id="mainField">
+            <label class="labelLong" for="equipment">Vehicle/Equipment:</label><br>
+                <select class="droppyBoi" name="equipment" id="clientsadd">
+                    <option></option>
+                    {{#each equipmentResult}}
+                        <option value="{{this.name}}">{{this.name}}</option>
+                    {{/each}}    
+                </select>
+            </div>
+        <div class = "field" id="mainField">
+            <label class="labelLong" for="equipment">Vehicle/Equipment:</label><br>
+                <select class="droppyBoi" name="equipment" id="clientsadd">
+                    <option></option>
+                    {{#each equipmentResult}}
+                        <option value="{{this.name}}">{{this.name}}</option>
+                    {{/each}}    
+                </select>
+            </div>
+        <div class = "field" id="mainField">
+            <label class="labelLong" for="equipment">Vehicle/Equipment:</label><br>
+                <select class="droppyBoi" name="equipment" id="clientsadd">
+                    <option></option>
+                    {{#each equipmentResult}}
+                        <option value="{{this.name}}">{{this.name}}</option>
+                    {{/each}}    
+                </select>
+            </div>
+        <label for="HECTARES:"> <p>Hectares:</p> </label>
+        <input class="inputField" type="text" name="hectares" id="HECTARES" placeholder="Hectares..." value= {{hectares}}>
+        <p>* Required fields</p>
+        <button class="button" id="submitButton" type="submit">Submit</button>
+        
+        
+    </form>
+</div>
+</body>

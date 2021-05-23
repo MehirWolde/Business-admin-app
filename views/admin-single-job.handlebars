@@ -1,0 +1,131 @@
+<!-- the handlebars file to for the page to display a specific jobs information -->
+<link rel="stylesheet" type="text/css" href="/css/admin-jobs.css" >
+<div class="editForm">
+    <form action="/admin/edit?cas=job" method="POST">
+
+            <label for="idNumber"><p class="editTitle">ID Number: {{saveResult.idNumber}}</p></label>
+             <a href="/admin/jobs/events?id={{saveResult.idNumber}}" target="content1"class="button" id ="addButton">
+                    <p>Event list</p>
+            </a>
+
+            
+            <input class="textarea" type="hidden" id="idNumber" name="idNumber" value="{{saveResult.idNumber}}">
+        <br><br>
+
+             <label for="name"><p class="editTitle">Name: *</p></label>
+            <textarea class="textarea" id="name" name="name" rows="4" cols="50" required>{{saveResult.name}}</textarea>
+        <br><br>
+
+         <label for="description"><p class="editTitle">Description:</p></label>
+            <textarea class="textarea" id="description" name="description" rows="4" cols="50" >{{saveResult.description}}</textarea>
+        <br><br>
+
+         <label for="location"><p class="editTitle">Location:</p></label>
+            <textarea class="textarea" id="location" name="location" rows="4" cols="50" >{{saveResult.location}}</textarea>
+        <br><br>
+
+         <label for="address"><p class="editTitle">Address:</p></label>
+            <textarea class="textarea" id="address" name="address" rows="4" cols="50" >{{saveResult.address}}</textarea>
+        <br><br>
+
+        <label for="workers"><p class="editTitle">Workers:</p></label>
+            <textarea class="textarea" id="workers" name="workers" rows="4" cols="50" >{{saveResult.workers}}</textarea>
+        <br><br>
+
+        <label class="editTitle" for="clients">Client:</label><br>        
+                <select class="droppyBoi" name="clients" id="clients">
+                    <option>{{saveResult.client}}</option>
+                    {{#each saveResult.clientsResult}}
+                        <option value="{{this.name}}">{{this.name}}</option>
+                    {{/each}}
+                    </select>
+                    <br><br>
+
+        <div class = "field" id="mainField">
+            <label class="labelLong editTitle" for="equipment1">Vehicle/Equipment:</label><br>
+                <select class="droppyBoi" name="equipment1" id="clients">
+                    <option>{{equipmentFound.[0]}}</option>
+                    <option></option>
+                    {{#each saveResult.equipmentResult}}
+                        <option value="{{this.name}}">{{this.name}}</option>
+                    {{/each}}    
+                </select>
+            <br></div>
+            <br><br>
+            <div class = "field" id="mainField">
+            <label class="labelLong editTitle" for="equipment1">Vehicle/Equipment:</label><br>
+                <select class="droppyBoi" name="equipment1" id="clients">
+                    <option>{{equipmentFound.[1]}}</option>
+                    <option></option>
+                    {{#each saveResult.equipmentResult}}
+                        <option value="{{this.name}}">{{this.name}}</option>
+                    {{/each}}    
+                </select>
+            <br></div>
+            <br><br>
+            <div class = "field" id="mainField">
+            <label class="labelLong editTitle" for="equipment1">Vehicle/Equipment:</label><br>
+                <select class="droppyBoi" name="equipment1" id="clients">
+                    <option>{{equipmentFound.[2]}}</option>
+                    <option></option>
+                    {{#each saveResult.equipmentResult}}
+                        <option value="{{this.name}}">{{this.name}}</option>
+                    {{/each}}    
+                </select>
+            <br></div>
+            <br><br>
+            <div class = "field" id="mainField">
+            <label class="labelLong editTitle" for="equipment1">Vehicle/Equipment:</label><br>
+                <select class="droppyBoi" name="equipment1" id="clients">
+                    <option>{{equipmentFound.[3]}}</option>
+                    <option></option>
+                    {{#each saveResult.equipmentResult}}
+                        <option value="{{this.name}}">{{this.name}}</option>
+                    {{/each}}    
+                </select>
+            <br></div>
+            <br><br>
+            <div class = "field" id="mainField">
+            <label class="labelLong editTitle" for="equipment1">Vehicle/Equipment:</label><br>
+                <select class="droppyBoi" name="equipment1" id="clients">
+                    <option>{{equipmentFound.[4]}}</option>
+                    <option></option>
+                    {{#each saveResult.equipmentResult}}
+                        <option value="{{this.name}}">{{this.name}}</option>
+                    {{/each}}    
+                </select>
+            <br></div>
+            <br><br>
+            <div class = "field" id="mainField">
+            <label class="labelLong editTitle" for="equipment1">Vehicle/Equipment:</label><br>
+                <select class="droppyBoi" name="equipment1" id="clients">
+                    <option>{{equipmentFound.[5]}}</option>
+                    <option></option>
+                    {{#each saveResult.equipmentResult}}
+                        <option value="{{this.name}}">{{this.name}}</option>
+                    {{/each}}    
+                </select>
+            <br></div>
+            <br><br>
+        <label for="isCompleted"><p class="editTitle">Status:</p></label>
+
+     <label> Complete
+         <input type="checkbox" id="status" name="status" value="true"
+    {{#if saveResult.status }}
+         checked="checked"
+    {{/if}}
+    >
+ </label>
+ <br><br>
+        <label for="hectares"><p class="editTitle">Hectares:</p></label>
+            <textarea class="textarea" id="hectares" name="hectares" rows="4" cols="50" required>{{saveResult.hectares}}</textarea>
+        <br><br>
+
+        <p>* Required fields</p>
+           
+      <div id="bottomPanel">
+          <input type="submit" value="Submit Changes" class="button" id="submitButton"></input>
+            <a href="/admin/delete?cas=job&id={{saveResult.idNumber}}" target="content2" class="deleteButton">Delete Job</a>
+        </div>
+    </form>
+</div>g

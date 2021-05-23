@@ -1,0 +1,36 @@
+<!-- the handlebars file for the page to add a specific fuel event information -->
+<link rel="stylesheet" type="text/css" href="/css/admin-jobs.css" >
+<div class="editForm">
+    <form action="/admin/edit?cas=client" method="POST">
+
+            <label for="idNumber"><p class="editTitle">ID Number: {{saveResult.idNumber}}</p></label>
+             <a href="/admin/clients/jobs?id={{saveResult.name}}" target="content1"class="button" id ="addButton">
+                    <p>Client jobs</p>
+            </a>
+
+            <input type="hidden" id="idNumber" name="idNumber" value="{{saveResult.idNumber}}">
+        <br><br>
+
+             <label for="name"><p class="editTitle">Name:</p></label>
+            <textarea class="textarea" id="name" name="name" rows="4" cols="50" required>{{saveResult.name}}</textarea>
+        <br><br>
+
+         <label for="phoneNumber"><p class="editTitle">Phone Number:</p></label>
+            <textarea class="textarea" id="phoneNumber" name="phoneNumber" rows="4" cols="50" required>{{saveResult.phoneNumber}}</textarea>
+        <br><br>
+
+        <label for="email"><p class="editTitle">E-mail:</p></label>
+            <textarea class="textarea" id="email" name="email" rows="4" cols="50" required>{{saveResult.email}}</textarea>
+        <br><br>
+
+        <label for="notes"><p class="editTitle">Notes:</p></label>
+            <textarea class="textarea" id="notes" name="notes" rows="4" cols="50" >{{saveResult.notes}}</textarea>
+        <br><br>
+           
+      <div id="bottomPanel">
+          <input type="submit" value="Submit Changes" class="button" id="submitButton"></input>
+            <a href="/admin/delete?cas=staff&id={{saveResult.idNumber}}" target="content2" class="deleteButton">Delete Client</a>
+        </div>
+    </form>
+</div>
+

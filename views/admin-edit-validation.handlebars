@@ -1,0 +1,21 @@
+<link rel="stylesheet" type="text/css" href="/css/admin-jobs.css" >
+<div id='jobsAdd'>
+        <div class='grid-main-header'>
+                <p id="pageTitle"> VALIDATION </p>
+        </div>
+
+        <div class="grid-main-body" id="edit-password">
+                <form id='editPassword' action="/admin/edit-validation?cas={{this.userType}}&id={{this.editThisUserID}}" method="POST">
+                       
+                        <p><input class='inputField' type="password" id="password" placeholder="Your password" name="password"
+                                        required value={{password}} >
+                        </p>
+            
+                        
+                       <div id="bottomPanel">
+                                <input type="submit" value="Confirm" class="button" id="submitButton"></input>
+                                <a href="about:blank" target="content2" class="deleteButton">Cancel</a>
+                        </div>
+                </form>
+        </div>
+</div>

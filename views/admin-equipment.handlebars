@@ -1,0 +1,26 @@
+<!-- the handlebars file for the page to display all jobs' information -->
+<link rel="stylesheet" type="text/css" href="/css/admin-jobs.css" >
+     
+    <div id= "jobsMain">
+        <p id="pageTitle">Equipment</p>
+        <div id="topPanel">
+            <div id="searchBarGrid">
+                    <form action="/admin/equipment/search">
+                        <input class="searchBar" id="searchBarGrid" type="text" placeholder="Search" name="searchParam" onchange=""> 
+                    </form>
+                </div>
+                <a href="/admin/equipment-add" target="content2"class="button" id ="addButton">
+                    <p>Add+</p>
+                </a>
+        </div>
+        {{#each saveResult}}
+            <div id= "jobList">
+            <div class = "jobItem">
+                <a href="/admin/equipment-item?id={{this.idNumber}}" target="content2"> 
+                <p class = "jobName"> {{this.name}} </p> 
+                <p class = "jobID">{{this.idNumber}}</p>
+                <p class = "jobDescription">{{this.serialNumber}}</p></a>
+            </div>
+        </div>
+        {{/each}}
+</div>

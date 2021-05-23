@@ -1,0 +1,45 @@
+<!-- the handlebars file for the page to display all staff members information -->
+<link rel="stylesheet" type="text/css" href="/css/admin-jobs.css" >
+     
+    <div id= "jobsMain">
+        <p id="pageTitle">Staff</p>
+        <div id="topPanel">
+            <div id="searchBarGrid">
+                    <form action="/admin/staff/search">
+                        <input class="searchBar" id="searchBarGrid" type="text" placeholder="Search" name="searchParam" onchange=""> 
+                    </form>
+            </div>
+                <a href="/registration" target="content2"class="button" id ="addButton">
+                    <p>Add+</p>
+                </a>
+        </div>
+    {{#if adminExists}}
+        <p id="banner">ADMINS</p>
+        {{#each saveAdmin}}
+            <div id= "jobList">
+            <div class = "jobItem">
+                <a href="/admin/single-admin?id={{this.idNumber}}" target="content2">
+                <p class = "jobName"> {{this.name}}</p>
+                <p> {{this.username}} </p> 
+                <p class = "jobDescription"> {{this.email}} </p>
+                 </a>
+            </div>
+        </div>
+        {{/each}}
+        <p id="banner">WORKERS</p>
+    {{/if}}
+
+
+    {{#each saveStaff}}
+        <div id= "jobList">
+        <div class = "jobItem">
+            <a href="/admin/single-staff?id={{this.idNumber}}" target="content2">
+                <p class = "jobName"> {{this.name}}</p>
+                <p> {{this.username}} </p> 
+                <p class = "jobDescription"> {{this.email}} </p>
+            </a>
+
+        </div>
+    </div>
+    {{/each}}
+</div>

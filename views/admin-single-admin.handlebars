@@ -1,0 +1,48 @@
+<!-- the handlebars file for the page to add a specific fuel event information -->
+<link rel="stylesheet" type="text/css" href="/css/admin-jobs.css" >
+<div class="editForm">
+    <form action="/admin/edit-admin" method="POST">
+
+            <label for="idNumber"><p class="editTitle">ID Number: {{saveResult.idNumber}}</p></label>
+            
+            <input type="hidden" id="idNumber" name="idNumber" value="{{saveResult.idNumber}}">
+        <br><br>
+
+             <label for="name"><p class="editTitle">Name: *</p></label>
+            <textarea class="textarea" id="name" name="name" rows="4" cols="50" required>{{saveResult.name}}</textarea>
+        <br><br>
+
+         <label for="username"><p class="editTitle">Username: *</p></label>
+            <textarea class="textarea" id="username" name="username" rows="4" cols="50" required>{{saveResult.username}}</textarea>
+        <br><br>
+
+<!-- !!!! prata med registation gang om obligatorisk lösenord !!!!! -->
+         <label for="password"><p class="editTitle">Password:</p></label>
+            <div id="topPanel">
+            <a href="/admin/edit-validation?cas={{saveResult.type}}&id={{saveResult.idNumber}}" target="content2"class="button" id ="editButton">
+                <p>Edit password</p>
+            </a>
+        </div>
+        <br><br>
+
+         <label for="phoneNumber"><p class="editTitle">Phone Number:</p></label>
+            <textarea class="textarea" id="phoneNumber" name="phoneNumber" rows="4" cols="50" required>{{saveResult.phoneNumber}}</textarea>
+        <br><br>
+
+        <label for="email"><p class="editTitle">E-mail:</p></label>
+            <textarea class="textarea" id="email" name="email" rows="4" cols="50" required>{{saveResult.email}}</textarea>
+        <br><br>
+
+        <label for="notes"><p class="editTitle">Notes:</p></label>
+            <textarea class="textarea" id="notes" name="notes" rows="4" cols="50" >{{saveResult.notes}}</textarea>
+        <br><br>
+           
+           <p>* Required fields</p>
+           
+      <div id="bottomPanel">
+          <input type="submit" value="Submit Changes" class="button" id="submitButton"></input>
+          <a href="/admin/delete?cas=admin&id={{saveResult.idNumber}}" target="content2" onclick="return confirm('Are you sure you want to delete this admin?')" class="deleteButton">Delete Admin Member</a>
+        </div>
+    </form>
+</div>
+

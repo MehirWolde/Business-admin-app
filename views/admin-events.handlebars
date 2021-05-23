@@ -1,0 +1,37 @@
+<!-- the handlebars file for the page to display all events information -->
+<link rel="stylesheet" type="text/css" href="/css/admin-jobs.css" >
+     
+    <div id= "jobsMain">
+        <p id="pageTitle">Reports</p>
+        <div id="topPanel">
+         <div id="searchBarGrid">
+                    <form action="/admin/events/search">
+                        <input class="searchBar" id="searchBarGrid" type="text" placeholder="Search" name="searchParam" onchange="">
+                        <input class="inputField" type="date" name="dateFrom" id="dateFrom" placeholder="  Date..."  value= {{dateFrom}}>
+                        <br>
+                        <input class="inputField" type="date" name="dateTo" id="dateTo" placeholder="  Date..."  value= {{dateTo}}>
+                    </form>
+                    <a href="/admin/statistics/" target="content2"class="button" id ="addButton">
+                        <p>Stats</p>
+                    </a>
+                    
+                <div class = "statsText">
+                    <br>
+                <iframe class="statsText" src="/admin/statistics/total?option=1&dateFrom=7&dateTo=7&worker=&job=" title="Totals"  frameborder= "0" height="20em" width="120%"><br></iframe>  
+                <iframe class="statsText" src="/admin/statistics/total?option=1&dateFrom=30&dateTo=30&worker=&job=" title="Totals" frameborder= "0" height="20em" width="120%"><br></iframe> 
+                </div>
+            </div>
+            
+        </div>
+        
+        {{#each saveResult}}
+            <div id= "jobList">
+            <div class = "jobItem">
+                <a href="/admin/single-event?id={{this.idNumber}}" target="content2">
+                <p class = "jobName"> {{this.worker}} </p> 
+                <p class = "jobID">{{this.jobName}}</p>
+                <p class = "jobDescription">{{this.startTime}}-{{this.endTime}} - total: {{this.hours}} hours</p></a>
+            </div>
+        </div>
+        {{/each}}
+</div>

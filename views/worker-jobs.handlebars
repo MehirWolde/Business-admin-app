@@ -1,0 +1,23 @@
+<!-- handlebarsfil för workerview versonen av jobs-->
+<link rel="stylesheet" type="text/css" href="/css/worker-jobs.css" >
+ <div class="background">
+      <div class="topPanel" id="item">
+    <div id= "name">
+        <h2>Jobs</h2>
+    </div>
+</div>
+        <div class="content" id="backButton">
+        <a href="." ><p>Back</p></a></div>
+
+        <div id= "jobList">
+            {{#each saveResult}}
+            <div id= "jobList">
+            <div class = "content">
+                <a href="/worker/jobs-item?id={{this.idNumber}}"> 
+                <p class = "jobName"> {{this.name}} </p> 
+                <p class = "jobDescription">{{this.desc}}</p></a>
+            </div>
+        </div>
+        {{/each}}
+        </div>
+</div>

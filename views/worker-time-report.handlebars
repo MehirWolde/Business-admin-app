@@ -1,0 +1,40 @@
+<link rel="stylesheet" type="text/css" href="/css/worker-jobs.css" >
+ <div class="background">
+
+ <div class="wrapwrap">
+      <div id= "jobsMain">
+        <div id="t1"><p>Time Reports</p></div>
+                <form action="/worker/time-report/search">
+                        <input class="searchBar" id="searchBarGrid" type="text" placeholder="Search" name="searchParam" onchange=""> 
+                        <br><br>
+                        <input class="inputField" type="date" name="dateFrom" id="date" placeholder="  Date..."  value= {{dateFrom}}>
+                        <br><br>
+                        <input class="inputField" type="date" name="dateTo" id="date" placeholder="  Date..."  value= {{dateTo}}>
+                    </form>
+        </div>
+
+        <div id="backButton" class="content">
+            <a href="/worker/"><p>Back</p></a> 
+        </div>
+        <div class="totalField ">
+            <iframe class="statsText" src="/worker/statistics/total?option=1&dateFrom=7&dateTo=7&worker=&job=" title="Totals"  frameborder= "0" height="20em" width="auto"><br></iframe>  
+            <iframe class="statsText" src="/worker/statistics/total?option=1&dateFrom=30&dateTo=30&worker=&job=" title="Totals" frameborder= "0" height="20em" width="auto"><br></iframe>
+            <br>
+        </div>
+          
+        <div id= "jobList">
+            {{#each saveResult}}
+            <div id= "jobList">
+            <div class = "content">
+                <a href="/worker/jobs-item/single-log?id={{this.id}}"> 
+                <p class = "jobName">{{this.jobName}}</p> 
+                <p class = "jobID">{{this.date}}</p>
+                <p class = "jobDescription">{{this.notes}}</p></a>
+            </div>
+        </div>
+        {{/each}}
+        
+                
+    </div>
+</div>
+</div>

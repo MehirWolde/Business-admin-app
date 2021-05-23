@@ -1,0 +1,27 @@
+<link rel="stylesheet" type="text/css" href="/css/style.css" >
+<div class='grid-main'>
+        <div class='grid-main-header'>
+                <p id="title"> H C BEALES</p>
+                <p id="subtitle"> Work App </p>
+        </div>
+
+        <div class="grid-main-body">
+
+                {{#if check}}
+                        <script>
+                                alert("Wrong username or password");
+                        </script>
+                {{/if}}
+
+                <form id='loginForm' action="/home" method="POST">
+                        <p><input class='text-fields' type="text" id="username" placeholder="Username" name="username"
+                                        value={{username}}></p>
+                        <p><input class='text-fields' type="password" id="password" placeholder="Password"
+                                        name="password" value={{password}}></p>
+                        <p><button class='buttons-freeform' type="Submit">Login</button></p>
+
+
+                </form>
+        </div>
+        <div class='grid-main-footer'>Made by Group Proton 2021</div>
+</div>

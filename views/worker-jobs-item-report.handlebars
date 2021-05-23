@@ -1,0 +1,94 @@
+<!-- handlebarsfil för workerviews rapportering av ett event-->
+<link rel="stylesheet" type="text/css" href="/css/worker-jobs.css" >
+
+<script>
+function myFunction() {
+  alert("Submitted successfully \nPlease remember to report fuel!");
+}
+</script>
+    <div class="background">
+        <div class="itemWrapper">
+            <form action="/worker/jobs-item-report?id={{id}}" method="POST">
+
+            
+            <div id="topPanel" > 
+                <input class="button" type="submit" value="Submit" onclick="myFunction()">
+                <input type="button" class="button" onclick="history.back();" value="Cancel" >
+            </div>
+
+            <div class="hiddenField" id="mainField">
+                <label class= "title" for="ID"> <p>EventID: {{idNumber}}</p> </label>
+                <input class="inputField" type="number" name="idNumber" id="idNumber" placeholder="ID Number..."  value= "{{idNumber}}" required>   
+            </div>
+
+            <div class="field" id="timeField">
+                <label class="infoText"> <p>* Required</p> <br> </label>
+                <label class= "title" for="STARTTIME"><p>* Start Time:</p></label>
+                <input class="inputField" type="time" id="startTime" name="startTime" required value = "{{startTime}}">
+                <br>
+                <br>
+                <label class= "title" for="ENDTIME"><p>* End Time:</p></label>
+                <input type="time" class="inputField" id="endTime" name="endTime" required value = {{endTime}}>
+            </div>
+           
+        
+            <div class="field" id="mainField">
+               <label class= "title" for="HOURS"> <p>* Hours worked:</p> </label>
+                <input class="inputField" type="text" name="hours" id="HOURS" placeholder="  Time..." required value= {{hours}}> 
+            </div>
+            
+            
+            <div class = "field" id="mainField">
+            <label class= "title"for="DATE"> <p>* Date:</p> </label>
+            <input class="inputField" type="date" name="date" id="DATE" placeholder="  Date..." required value= {{date}}>
+            </div>
+
+            <div class = "field" id="mainField">
+            <label class="labelLong" for="equipment">Vehicle:</label><br>
+                <select class="droppyBoi" name="equipment" id="EQUIPMENT">
+                    <option></option>
+                    {{#each equipment}}
+                        <option value="{{this}}">{{this}}</option>
+                    {{/each}}    
+                </select>
+            <br></div>
+
+            <div class = "field" id="mainField">
+            <label class="labelLong" for="equipment">Equipment 1:</label><br>
+                <select class="droppyBoi" name="equipment" id="EQUIPMENT">
+                    <option></option>
+                    {{#each equipment}}
+                        <option value="{{this}}">{{this}}</option>
+                    {{/each}}    
+                </select>
+            <br></div>
+
+            <div class = "field" id="mainField">
+            <label class="labelLong" for="equipment">Equipment 2:</label><br>
+                <select class="droppyBoi" name="equipment" id="EQUIPMENT">
+                    <option></option>
+                    {{#each equipment}}
+                        <option value="{{this}}">{{this}}</option>
+                    {{/each}}    
+                </select>
+            <br></div>
+            
+            <div class = "field" id="mainField">
+            <label class= "title" for="HECTARES:"> <p>Hectares:</p> </label>
+            <input class="inputField" type="number" name="hectares" id="HECTARES" placeholder="Hectares..." value= {{hectares}}>
+            </div>
+            
+            <div class = "field" id="mainField">
+            <label class= "title" for="ITEMS"> <p>Items:</p> </label>
+            <input class="inputField" type="text" name="items" id="ITEMS" placeholder="Items..." value= {{items}}>
+            </div>
+
+            <div class = "field" id="notesField">
+            <label for="NOTES"> <p>Notes:</p> </label>
+            <textarea class="textArea" name="notes" id="NOTES" placeholder="Notes..." rows=4 cols=30 value= {{notes}}></textarea>
+            </div>
+
+            </form>
+        </div> 
+    </div>
+

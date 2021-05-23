@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=">
+        <!--<link rel="stylesheet" type="text/css" href="/css/style.css" >-->
+        
+
+    </head>
+    
+</head>
+<title> {{ title }}</title>
+<header>
+    {{#if loggedIn}}
+        {{> header}}
+    {{/if}}
+</header>
+<body>
+    {{{ body }}} 
+</body>
+<footer>{{#if loggedIn}}
+        {{> footer}}
+    {{/if}}</footer>
+</html>

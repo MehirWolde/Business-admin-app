@@ -1,0 +1,41 @@
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<div class='grid-main'>
+        <div class='grid-main-header'>
+                <p id="title"> H C BEALES</p>
+                <p id="subtitle"> Create Account </p>
+        </div>
+
+        <div class="grid-main-body">
+                <p>THIS IS ADMIN REG</p>
+                <form id='registrationForm' action="/registration/admin" method="POST">
+
+                        <p><input class='text-fields' type="text" id="name" placeholder="Name" name="name"
+                                        value={{name}}>
+                        </p>
+                        <p><input class='text-fields' type="hidden" id="idNumber" placeholder="idNumber" name="idNumber"
+                                        value="{{idNumber}}">
+                        </p>
+                        <p><input class='text-fields' type="text" id="email" placeholder="Email Address" name="email"
+                                        value={{email}}>
+                        </p>
+                        <p><input class='text-fields' type="text" id="phoneNumber" placeholder="phoneNumber"
+                                        name="phoneNumber" value={{phoneNumber}}>
+                        </p>
+                        <p><input class='text-fields' type="text" id="username" placeholder="User name" name="username"
+                                        value={{username}}>
+                        </p>
+                        <p><input class='text-fields' type="password" id="password" placeholder="Password"
+                                        name="password" value={{password}}>
+                        </p>
+                        <p><input class='text-fields' type="password" id="repeatPassword" placeholder="repeatePassword"
+                                        name="repeatePassword" value={{repeatepassword}}>
+                        </p>                        
+
+                        <p><button class='buttons-freeform' type="Submit">Create Account</button></p>
+                        <a href="/home" class='buttons-freeform'>Cancel</a>
+
+                </form>
+        </div>
+        <div class='grid-main-footer'>Copyright © Group Proton 2021</div>
+
+</div>
